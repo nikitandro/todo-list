@@ -1,0 +1,219 @@
+@font-face {
+  font-family: Montserrat;
+  src: url('./fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Montserrat;
+  color: white;
+  font-weight: bold;
+  background-color: #2c2d34;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0 0;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+button.button {
+  font-family: Montserrat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 25px;
+  background: #db5a6f;
+  border-radius: 50px;
+  color: white;
+  border: none;
+  font-size: 17px;
+  line-height: 21px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+.todo-item {
+  background-color: #414457;
+  padding: 30px;
+  border-radius: 20px;
+  width: 780px;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+  }
+
+  .state {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .checkbox {
+    width: 35px;
+    height: 35px;
+  }
+
+  .operations {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    button {
+      &.open-todo {
+        &.open {
+          img {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.todo-producer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  background: #2c708d;
+  border-radius: 20px;
+  width: 780px;
+
+  &.open {
+    .content {
+      width: 100%;
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        .cont-1 {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 30px;
+          color: rgba(255, 255, 255, 0.65);
+          font-size: 24px;
+          line-height: 29px;
+          font-weight: bold;
+          text-align: center;
+          button {
+            border: none;
+            background: none;
+            height: fit-content;
+            cursor: pointer;
+
+            img {
+              vertical-align: middle;
+              transform: rotate(45deg);
+              transition-duration: 0.5s;
+            }
+          }
+
+          .inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            width: 100%;
+          }
+
+          .input-todo-content {
+            textarea {
+              font-weight: 700;
+              font-size: 17px;
+              line-height: 21px;
+            }
+          }
+
+          input,
+          textarea {
+            font-family: Montserrat;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 29px;
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            outline: none;
+            color: white;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height: 3000px;
+            resize: none;
+
+            &::placeholder {
+              color: rgba(255, 255, 255, 0.65);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.closed {
+    .content {
+      width: 100%;
+
+      .preview {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 24px;
+        line-height: 29px;
+        font-weight: bold;
+        text-align: center;
+
+        button {
+          border: none;
+          background: none;
+          height: fit-content;
+          cursor: pointer;
+
+          img {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
